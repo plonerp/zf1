@@ -15,7 +15,8 @@ try {
 }
  
 $tokens = $apns->feedback();
-while(list($token, $time) = each($tokens)) {
+
+foreach($tokens as $token => $time) {
     echo $time . "\t" . $token . PHP_EOL;
 }
 $apns->close();
